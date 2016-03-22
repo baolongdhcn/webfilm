@@ -36,7 +36,7 @@
 
                 <header>
 
-                    <h2><a href="#dmphim" class=" back-link-icon" title="Back to Danh Mục manager"><i class="fa fa-arrow-circle-o-left"></i></a>Edit Danh Mục</h2>
+                    <h2><a href="#tlphim" class=" back-link-icon" title="Back to Thể loại manager"><i class="fa fa-arrow-circle-o-left"></i></a>Edit Thể loại</h2>
 
                 </header>
 
@@ -58,7 +58,7 @@
 
                     <div class="widget-body no-padding">
 
-                       <form class="smart-form" method="post" action="{{url('admin/post_edit_dmphim')}}" enctype="multipart/form-data">
+                       <form class="smart-form" method="post" action="{{url('admin/post_edit_tlphim')}}" enctype="multipart/form-data">
 
                         <fieldset>
 
@@ -70,6 +70,21 @@
 
                                         <input type="hidden" name="id" value="{{$id->id}}">
                                         
+                                        <label class="label" for="">Danh mục</label>
+
+                                        <select class="form-control" name="id_dm">
+                                            @foreach($dmphim as $row)
+
+                                                <option value="{{$row->id}}"
+                                                    @if($row->id==$id->id_danhmuc)
+                                                        {{"selected"}}
+                                                    @endif
+                                                    >{{$row->title}}</option>
+                                          
+                                            @endforeach
+                                        </select>
+
+
                                         <label class="label" for="">Title</label>
 
                                         <label class="input" for="">

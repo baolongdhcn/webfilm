@@ -82,7 +82,7 @@
 
                     <div class="widget-body no-padding">
 
-                      <form class="smart-form" method="post" action="{{url('admin/post_create_dmphim')}}" enctype="multipart/form-data">
+                      <form class="smart-form" method="post" action="{{url('admin/post_create_tlphim')}}" enctype="multipart/form-data">
 
                         <fieldset>
 
@@ -91,7 +91,14 @@
                                 <div class="col col-10">
 
                                     <section>
+                                        <label class="label" for="">Danh mục</label>
 
+                                        <select class="form-control" name="id_dm">
+                                            @foreach($dmphim as $row)
+                                                <option value="{{$row->id}}">{{$row->title}}</option>
+                                          
+                                            @endforeach
+                                        </select>
 
                                         <label class="label" for="">Title</label>
 

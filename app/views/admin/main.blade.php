@@ -54,7 +54,12 @@
                             <span class="menu-item-parent">Danh mục</span>
                         </a>
                     </li>
-                   
+                   <li>
+                        <a href="#tlphim"  title="">
+                            <i class="fa fa-lg fa-fw fa-search"></i> 
+                            <span class="menu-item-parent">Thể loại</span>
+                        </a>
+                    </li>
                   
                    
                    

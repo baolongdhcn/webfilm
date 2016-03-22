@@ -257,5 +257,84 @@ class BackendController extends BaseController {
 		return Redirect::to('admin/dashboard#dmphim');
 	}
 	////////////////////////////////////////////////////
+
+	//the loai phim
+
+	public function tlphim(){
+		$tlphim = tlphim::get();
+		$dmphim = array();
+		foreach($tlphim as $row){
+			$row->dmphim = dmphim::where("id","=",$row->id_danhmuc)->get();
+		}
+		
+		
+		return View::make('admin.tlphim.tlphim')->with('tlphim',$tlphim)->with('dmphim',$dmphim);
+	}
+	public function edit_tlphim($id){
+		$id = tlphim::find($id);
+		$dmphim = dmphim::get();
+		return View::make('admin.tlphim.edit_tlphim')->with('id',$id)->with('dmphim',$dmphim);
+	}
+	public function post_edit_tlphim(){
+		$input=Input::all();
+		$id=Input::get('id');     	
+
+		$admin = tlphim::find($id);
+		$admin->title = $input['title'];
+		$admin->id_danhmuc = $input['id_dm'];
+
+   		$rules = array(
+			
+		);
+   		$validator = Validator::make($input, $rules);
+
+
+
+   		if($validator->fails()){
+			return Redirect::to('admin/dashboard#tlphim/'.$id)->withErrors($validator);
+		}
+		else{
+			
+	     	if($admin->save()){
+			    return Redirect::to("admin/dashboard#tlphim");
+			}
+		}
+	}
+	public function delete_tlphim($id){
+		$id = tlphim::find($id);
+  		
+  		
+		$id->delete();
+		return Redirect::to("admin/dashboard#tlphim");
+	}
+	public function create_tlphim(){
+		$dmphim = dmphim::get();
+		return View::make('admin.tlphim.create_tlphim')->with('dmphim',$dmphim);;
+	}
+	public function post_create_tlphim(){
+		$input=Input::all();
+
+   		$rules = array(
+			
+		);
+   		$validator = Validator::make($input, $rules);
+
+		
+
+   		if($validator->fails()){
+			return Redirect::to('admin/dashboard#tlphim/insert')->withErrors($validator);
+		}
+		else{
+			
+
+				$create = tlphim::create(array(
+					"title" => $input['title'],
+					"id_danhmuc" => $input['id_dm']
+		 		));
+			
+		}
+		return Redirect::to('admin/dashboard#tlphim');
+	}
+	////////////////////////////////////////////////////
 }
 ?>

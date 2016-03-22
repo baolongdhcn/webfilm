@@ -38,7 +38,7 @@
 
                 <header>
 
-                    <h2>Danh Mục manager</h2>
+                    <h2>Thể loại manager</h2>
 
                 </header>
 
@@ -69,7 +69,7 @@
                     <div class="widget-body">
 
                         <p>
-                            <a href="#dmphim/insert" class="btn btn-sm btn-default">Add new</a>
+                            <a href="#tlphim/insert" class="btn btn-sm btn-default">Add new</a>
                         </p>
                         <div class="table-responsive">
 
@@ -82,7 +82,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Title</th>
-
+                                    <th>Danh mục</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
@@ -91,14 +91,19 @@
 
                                 <tbody>
                                     <?php $i = 0; ?>
-                                    @foreach($dmphim as $row)
+                                    @foreach($tlphim as $row)
                                         <tr>
                                             <th>{{$i+=1}}</th>
                                             <th>{{$row->title}}
                                             </th>
-                                          
-                                            <th><a href="#dmphim/edit/{{$row->id}}"><button class="btn btn-xs btn-success">Edit</button></a></th>
-                                            <th><a href="delete_dmphim/{{$row->id}}"><button class="btn btn-xs btn-danger">Delete</button></a></th>
+                                            <th>
+                                                @foreach($row->dmphim as $danhmuc)
+                                                    {{$danhmuc->title}}
+                                                @endforeach
+                                                
+                                            </th>
+                                            <th><a href="#tlphim/edit/{{$row->id}}"><button class="btn btn-xs btn-success">Edit</button></a></th>
+                                            <th><a href="delete_tlphim/{{$row->id}}"><button class="btn btn-xs btn-danger">Delete</button></a></th>
                                         </tr>
                                     @endforeach
 
