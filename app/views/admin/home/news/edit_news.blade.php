@@ -36,7 +36,7 @@
 
                 <header>
 
-                    <h2><a href="#slider" class=" back-link-icon" title="Back to Slider manager"><i class="fa fa-arrow-circle-o-left"></i></a>Edit Slider</h2>
+                    <h2><a href="#news" class=" back-link-icon" title="Back to News manager"><i class="fa fa-arrow-circle-o-left"></i></a>Edit News</h2>
 
                 </header>
 
@@ -58,7 +58,7 @@
 
                     <div class="widget-body no-padding">
 
-                       <form class="smart-form" method="post" action="{{url('admin/post_edit_slider')}}" enctype="multipart/form-data">
+                       <form class="smart-form" method="post" action="{{url('admin/post_edit_news')}}" enctype="multipart/form-data">
 
                         <fieldset>
 
@@ -70,29 +70,21 @@
 
                                         <input type="hidden" name="id" value="{{$id->id}}">
                                         
-                                        <label class="label" for="">Title_vn</label>
+                                        <label class="label" for="">Title</label>
 
                                         <label class="input" for="">
-                                            <input class="form-control" name="title_vn" value="{{$id->title_vn}}">
+                                            <input class="form-control" name="title" value="{{$id->title}}">
                                         </label>
 
-                                        <label class="label" for="">Title_en</label>
-
-                                        <label class="input" for="">
-                                            <input class="form-control" name="title_en" value="{{$id->title_en}}">
-                                        </label>
+                                        
 
                                         <label class="label" for="">Content</label>
 
                                         <label class="textarea" for="">
-                                            <textarea class="form-control ckeditor" name="content" id="editor1">{{$id->content}}</textarea>
+                                            <textarea class="form-control ckeditor" name="content" id="editor">{{$id->content}}</textarea>
                                         </label>
 
-                                        <label class="label" for="">Description</label>
-
-                                        <label class="textarea" for="">
-                                            <textarea class="form-control ckeditor" name="description" id="editor2">{{$id->description}}</textarea>
-                                        </label>
+                                        
                                         <label class="label" for="">
                                             Image
                                         </label>
@@ -133,6 +125,6 @@
 </section>
 
 <script type="text/javascript">
-    CKEDITOR.replace('editor1');
-    CKEDITOR.replace('editor2');
+    CKEDITOR.replace('editor');
+    
 </script>

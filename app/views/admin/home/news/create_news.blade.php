@@ -2,7 +2,7 @@
 
     <h1>
 
-        Create slider
+        Create news
 
     </h1>
 
@@ -62,7 +62,7 @@
 
                 <header>
 
-                    <h2><a href="#slider" class=" back-link-icon" title="Back to Slider manager"><i class="fa fa-arrow-circle-o-left"></i></a> Add new slider</h2>
+                    <h2><a href="#news" class=" back-link-icon" title="Back to News manager"><i class="fa fa-arrow-circle-o-left"></i></a> Add new news</h2>
 
                 </header>
 
@@ -82,7 +82,7 @@
 
                     <div class="widget-body no-padding">
 
-                      <form class="smart-form" method="post" action="{{url('admin/post_create_slider')}}" enctype="multipart/form-data">
+                      <form class="smart-form" method="post" action="{{url('admin/post_create_news')}}" enctype="multipart/form-data">
 
                         <fieldset>
 
@@ -93,29 +93,19 @@
                                     <section>
 
 
-                                        <label class="label" for="">Title_vn</label>
+                                        <label class="label" for="">Title</label>
 
                                         <label class="input" for="">
-                                            <input class="form-control" name="title_vn">
+                                            <input class="form-control" name="title">
                                         </label>
 
-                                        <label class="label" for="">Title_en</label>
-
-                                        <label class="input" for="">
-                                            <input class="form-control" name="title_en">
-                                        </label>
 
                                          <label class="label" for="">Content</label>
 
                                         <label class="textarea" for="">
-                                            <textarea class="form-control editor" name="content"></textarea>
+                                            <textarea class="form-control editor" name="content" id="editor"></textarea>
                                         </label>  
-
-                                        <label class="label" for="">Description</label>
-
-                                        <label class="textarea" for="">
-                                            <textarea class="form-control editor" name="description" id="editor"></textarea>
-                                        </label>    
+    
                                         <label class="label" for="image">Image</label>
 
                                         <label class="input" for="">

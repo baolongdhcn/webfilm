@@ -36,7 +36,21 @@ Route::group(array('prefix' =>'admin','before' =>'authAdmin'),function()
 		Route::post('post_edit_user',array( 'as'=>'post_edit_user', 'uses'=>'AdminController@post_edit_user'));
 
 
-		
+		 //Slider (home)
+		Route::get('slider',array( 'as'=>'slider', 'uses'=>'BackendController@slider'));
+		Route::get('slider/edit/{id}',array( 'as'=>'edit_slider', 'uses'=>'BackendController@edit_slider'));
+		Route::post('post_edit_slider',array( 'as'=>'post_edit_slider', 'uses'=>'BackendController@post_edit_slider'));
+		Route::get('delete_slider/{id}',array( 'as'=>'delete_slider', 'uses'=>'BackendController@delete_slider'));
+		Route::get('slider/insert',array( 'as'=>'create_slider', 'uses'=>'BackendController@create_slider'));
+		Route::post('post_create_slider',array( 'as'=>'post_create_slider', 'uses'=>'BackendController@post_create_slider'));
+
+		//news (home)
+		Route::get('news',array( 'as'=>'news', 'uses'=>'BackendController@news'));
+		Route::get('news/edit/{id}',array( 'as'=>'edit_news', 'uses'=>'BackendController@edit_news'));
+		Route::post('post_edit_news',array( 'as'=>'post_edit_news', 'uses'=>'BackendController@post_edit_news'));
+		Route::get('delete_news/{id}',array( 'as'=>'delete_news', 'uses'=>'BackendController@delete_news'));
+		Route::get('news/insert',array( 'as'=>'create_news', 'uses'=>'BackendController@create_news'));
+		Route::post('post_create_news',array( 'as'=>'post_create_news', 'uses'=>'BackendController@post_create_news'));
 
 });
 ?>

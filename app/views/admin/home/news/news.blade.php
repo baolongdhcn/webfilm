@@ -38,7 +38,7 @@
 
                 <header>
 
-                    <h2>Slider manager</h2>
+                    <h2>News manager</h2>
 
                 </header>
 
@@ -69,7 +69,7 @@
                     <div class="widget-body">
 
                         <p>
-                            <a href="#slider/insert" class="btn btn-sm btn-default">Add new</a>
+                            <a href="#news/insert" class="btn btn-sm btn-default">Add new</a>
                         </p>
                         <div class="table-responsive">
 
@@ -83,7 +83,7 @@
                                     <th>No</th>
                                     <th>Title</th>
                                     <th>Image</th>
-                                    <th>Description</th>
+                                    <th>Content</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
@@ -92,16 +92,15 @@
 
                                 <tbody>
                                     <?php $i = 0; ?>
-                                    @foreach($slider as $row)
+                                    @foreach($news as $row)
                                         <tr>
                                             <th>{{$i+=1}}</th>
-                                            <th>{{$row->title_vn}}<br>
-                                                {{$row->title_en}}
+                                            <th>{{$row->title}}
                                             </th>
                                             <th><img src="{{url($row->image)}}" heigh="50" width="100" alt=""></th>
-                                            <th>{{$row->description}}</th>
-                                            <th><a href="#slider/edit/{{$row->id}}"><button class="btn btn-xs btn-success">Edit</button></a></th>
-                                            <th><a href="delete_slider/{{$row->id}}"><button class="btn btn-xs btn-danger">Delete</button></a></th>
+                                            <th>Content....</th>
+                                            <th><a href="#news/edit/{{$row->id}}"><button class="btn btn-xs btn-success">Edit</button></a></th>
+                                            <th><a href="delete_news/{{$row->id}}"><button class="btn btn-xs btn-danger">Delete</button></a></th>
                                         </tr>
                                     @endforeach
 
