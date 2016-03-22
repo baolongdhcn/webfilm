@@ -52,5 +52,20 @@ Route::group(array('prefix' =>'admin','before' =>'authAdmin'),function()
 		Route::get('news/insert',array( 'as'=>'create_news', 'uses'=>'BackendController@create_news'));
 		Route::post('post_create_news',array( 'as'=>'post_create_news', 'uses'=>'BackendController@post_create_news'));
 
+		//dmphim
+		Route::get('dmphim',array( 'as'=>'dmphim', 'uses'=>'BackendController@dmphim'));
+		Route::get('dmphim/edit/{id}',array( 'as'=>'edit_dmphim', 'uses'=>'BackendController@edit_dmphim'));
+		Route::post('post_edit_dmphim',array( 'as'=>'post_edit_dmphim', 'uses'=>'BackendController@post_edit_dmphim'));
+		Route::get('delete_dmphim/{id}',array( 'as'=>'delete_dmphim', 'uses'=>'BackendController@delete_dmphim'));
+		Route::get('dmphim/insert',array( 'as'=>'create_dmphim', 'uses'=>'BackendController@create_dmphim'));
+		Route::post('post_create_dmphim',array( 'as'=>'post_create_dmphim', 'uses'=>'BackendController@post_create_dmphim'));
+
+		//dmphim
+		Route::get('tlphim',array( 'as'=>'dmphim', 'uses'=>'BackendController@tlphim'));
+		Route::get('tlphim/edit/{id}',array( 'as'=>'edit_tlphim', 'uses'=>'BackendController@edit_tlphim'));
+		Route::post('post_edit_tlphim',array( 'as'=>'post_edit_tlphim', 'uses'=>'BackendController@post_edit_tlphim'));
+		Route::get('delete_tlphim/{id}',array( 'as'=>'delete_tlphim', 'uses'=>'BackendController@delete_tlphim'));
+		Route::get('tlphim/insert',array( 'as'=>'create_tlphim', 'uses'=>'BackendController@create_tlphim'));
+		Route::post('post_create_tlphim',array( 'as'=>'post_create_tlphim', 'uses'=>'BackendController@post_create_tlphim'));
 });
 ?>

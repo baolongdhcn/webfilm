@@ -123,7 +123,7 @@ class BackendController extends BaseController {
    		$filename = '';
 
    		if($validator->fails()){
-			return Redirect::to('admin/dashboard#slider/news/'.$id)->withErrors($validator);
+			return Redirect::to('admin/dashboard#news/'.$id)->withErrors($validator);
 		}
 		else{
 			if (Input::hasFile('image')){
@@ -185,6 +185,76 @@ class BackendController extends BaseController {
 			}
 		}
 		return Redirect::to('admin/dashboard#news');
+	}
+	////////////////////////////////////////////////////
+	//Danh muc phim
+
+	public function dmphim(){
+		$dmphim = dmphim::get();
+		return View::make('admin.dmphim.dmphim')->with('dmphim',$dmphim);
+	}
+	public function edit_dmphim($id){
+		$id = dmphim::find($id);
+		return View::make('admin.dmphim.edit_dmphim')->with('id',$id);
+	}
+	public function post_edit_dmphim(){
+		$input=Input::all();
+		$id=Input::get('id');     	
+
+		$admin = dmphim::find($id);
+		$admin->title = $input['title'];
+
+   		$rules = array(
+			
+		);
+   		$validator = Validator::make($input, $rules);
+
+		$destinationPath = '';
+   		$filename = '';
+
+   		if($validator->fails()){
+			return Redirect::to('admin/dashboard#dmphim/'.$id)->withErrors($validator);
+		}
+		else{
+			
+	     	if($admin->save()){
+			    return Redirect::to("admin/dashboard#dmphim");
+			}
+		}
+	}
+	public function delete_dmphim($id){
+		$id = dmphim::find($id);
+  		
+  		
+		$id->delete();
+		return Redirect::to("admin/dashboard#dmphim");
+	}
+	public function create_dmphim(){
+		return View::make('admin.dmphim.create_dmphim');
+	}
+	public function post_create_dmphim(){
+		$input=Input::all();
+
+   		$rules = array(
+			
+		);
+   		$validator = Validator::make($input, $rules);
+
+		
+
+   		if($validator->fails()){
+			return Redirect::to('admin/dashboard#dmphim/insert')->withErrors($validator);
+		}
+		else{
+			
+
+				$create = dmphim::create(array(
+					"title" => $input['title'],
+					
+		 		));
+			
+		}
+		return Redirect::to('admin/dashboard#dmphim');
 	}
 	////////////////////////////////////////////////////
 }

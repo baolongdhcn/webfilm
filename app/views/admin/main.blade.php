@@ -47,8 +47,13 @@
                             <li><a href="slider">Sliders</a></li>
                             <li><a href="news">News</a></li>
                         </ul>  
-                    </li><!--home-->
-                    
+                    </li>
+                    <li>
+                        <a href="#dmphim"  title="">
+                            <i class="fa fa-lg fa-fw fa-search"></i> 
+                            <span class="menu-item-parent">Danh mục</span>
+                        </a>
+                    </li>
                    
                   
                    
