@@ -1,0 +1,127 @@
+.slide-content .name-vi {
+    color: #F44336;
+}
+.slide-content .name-en {
+    width: 310px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.slide-content p {
+    margin-bottom: 5px;
+}
+.tip-info-bottom {
+    margin: 0 0 10px;
+    padding: 0;
+}
+.tip-info-bottom>li {
+    float: left;
+    list-style-type: none;
+}
+.redTag {
+    background-color: #e74c3c;
+}
+.tagsInfo {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    -moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    border-radius: 18px;
+    margin: 0 3px;
+}
+.tn-btn-view {
+    color: #FFF;
+    background-color: #67c920;
+    border-color: #67c920;
+}
+.cluetip-jtip {
+    font-size: 14px;
+    color: #808080;
+    line-height: normal;
+    background-color: #FFF;
+    margin-top: 50px;
+}
+.tn-btn-view2 {
+    color: #FFF;
+    background-color: #aeaeae;
+    border-color: #aeaeae;
+}
+.cluetip-jtip .cluetip-inner {
+    padding: 10px;
+    display: inline-block;
+}
+.mr05 {
+    margin-right: 05px!important;
+}
+.greenTag {
+    background-color: #7bda37;
+}
+.tn-contentdecs {
+    border-top: 1px solid #cccccc;
+    color: #727272;
+    padding-top: 8px;
+    text-align: justify;
+}
+
+
+
+/*//////////////////////*/
+
+.slidebar-right .blockScrollList {
+    position: absolute;
+    overflow: hidden;
+    height: 85%;
+    width: 24%;
+}
+.slidebar-right .blockList {
+    list-style-type: none;
+    padding: 0px 10px 5px 10px;
+    margin: 0px;
+    position: absolute;
+    overflow: auto;
+}
+.slidebar-right .blockList li {
+    min-height: 65px;
+    clear: both;
+}
+.slidebar-right .blockList {
+    list-style-type: none;
+    padding: 0px 10px 5px 10px;
+    margin: 0px;
+    position: absolute;
+    overflow: auto;
+}
+.slidebar-right .blockList .imgThumb {
+    padding-top: 5px;
+}
+.slidebar-right .blockList .imgThumb {
+    width: 25%;
+    display: inline-block;
+    float: left;
+}
+.slidebar-right .blockList .imgThumb img {
+    width: 90%;
+    height: auto;
+}
+a {
+    text-decoration: none;
+}
+.slidebar-right .blockList .blockContInfo {
+    width: 70%;
+    display: inline-block;
+    float: left;
+}
+.slidebar-right .blockList .blockContInfo a {
+    color: #fff;
+}
+.slidebar-right .blockList .blockContInfo a {
+    font-size: 1em;
+    color: #000;
+}
+.slidebar-right .blockScrollList:hover {
+    overflow: auto;
+}
