@@ -18,6 +18,7 @@ Route::get('logout', array('uses' => 'AdminController@doLogout'));
 
 //homecontroller
 Route::get('/', array('as'=>'trangchu','uses'=>'HomeController@home'));
+Route::get('/detailfilm', array('as'=>'detailfilm','uses'=>'HomeController@detailfilm'));
 
 
 //admincontroller

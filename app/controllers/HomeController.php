@@ -6,7 +6,12 @@ class HomeController extends BaseController {
 		
 		;
 	}
-	
+	public function detailfilm(){
+		
+		return View::make('detailfilm')
+		
+		;
+	}
 	
 }
 ?>
